@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  border-bottom: 1px solid #eaeaea;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.divided {
+  padding: 8px 12px;
+  font-size: 1.2rem;
+}
+
+.divided:hover,
+.divided:focus,
+.divided:active {
+  color: #0070f3;
+}
