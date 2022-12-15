@@ -3,25 +3,35 @@ import { Footer } from 'src/components/Footer'
 import styles from 'src/styles/Home.module.css'
 import { Main } from 'src/components/Main'
 import { Header } from 'src/components/Header'
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 
 export default function Home() {
-  const foo = 1
+  // const foo = 1
 
-  const handleClick = useCallback((e) => {
-    console.log(e.target.href);
-    e.preventDefault();
-    alert(foo);
-  }, [])
+  // const handleClick = useCallback((e) => {
+  //   console.log(e.target.href);
+  //   e.preventDefault();
+  //   alert(foo);
+  // }, [])
+
+  useEffect(() => {
+    console.log("マウント")
+    document.body.style.backgroundColor ="lightblue";
+    return () => {
+      console.log("アンマウント");
+      document.body.style.backgroundColor ="";
+    };
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
       </Head>
       <Header />
-      <a href="/about" onClick={handleClick}>
+      {/* <a href="/about" onClick={handleClick}>
         ボタン
-      </a>
+      </a> */}
 
       <Main page="index" />
 
