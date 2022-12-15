@@ -8,19 +8,20 @@ import { useCallback, useEffect, useState } from 'react'
 export default function Home() {
   let [count, setCount] = useState(1);
 
-  const handleClick = (e) => {
-    setCount(count => count + 1);
-    setCount(count => count + 1);
-  };
+  const handleClick = useCallback(() => {
+    console.log(count);
+    if (count < 10){
+      setCount(count => count + 1);
+    }    
+  }, [count]);
 
   useEffect(() => {
     document.body.style.backgroundColor ="lightblue";
     return () => {
-      document.body.style.backgroundColor ="";
+    document.body.style.backgroundColor ="";
     };
-  }, []);
+  }, [count]);
 
-  console.log(count)
   return (
     <div className={styles.container}>
       <Head>
