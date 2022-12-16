@@ -62,7 +62,7 @@ export default function Home() {
       <ul>
         {arry.map(item => {
           return (
-            <li>{item}</li>
+            <li key={item}>{item}</li>
           )
         })}
       </ul>
