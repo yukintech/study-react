@@ -13,7 +13,7 @@ export default function Home() {
   const handleClick = useCallback(() => {
     console.log(count);
     if (count < 10){
-      setCount(count => count + 1);
+      setCount(prevCount => prevCount + 1);
     }    
   }, [count]);
 
@@ -25,9 +25,9 @@ export default function Home() {
     setText(e.target.value.trim());
   }, []);
 
-  const handleDisplay = () => {
-    setIsShow((isShow) => !isShow);
-  }
+  const handleDisplay =  useCallback(() => {
+    setIsShow((prevIsShow) => !prevIsShow);
+  });
 
   useEffect(() => {
     document.body.style.backgroundColor ="lightblue";
